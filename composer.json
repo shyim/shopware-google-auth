@@ -1,0 +1,13 @@
+{
+  "name": "shyim/shopware-google-auth",
+  "keywords": ["shopware", "google", "auth", "authenticator", "google-authenticator"],
+  "description": "Google Authenticator for Shopware",
+  "license": "MIT",
+  "type": "shopware-plugin",
+  "extra": {
+    "installer-name": "ShyimGoogleAuthenticator"
+  },
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}

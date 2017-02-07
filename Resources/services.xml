@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="shyim_google_auth.view_dir">%shyim_google_auth.plugin_dir%/Resources/views</parameter>
+    </parameters>
+
+    <services>
+        <!-- Subscribers -->
+        <service id="shyim_googleauth.subscribers.backend_login" class="ShyimGoogleAuthenticator\Subscribers\BackendLogin">
+            <argument>%shyim_google_auth.view_dir%</argument>
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="shyim_googleauth.subscribers.twofactorauth" class="ShyimGoogleAuthenticator\Subscribers\Controller">
+            <argument>%shyim_google_auth.plugin_dir%</argument>
+            <argument>%shyim_google_auth.view_dir%</argument>
+            <argument type="service" id="template"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="shyim_googleauth.verification" class="ShyimGoogleAuthenticator\Components\Verification"/>
+    </services>
+</container>

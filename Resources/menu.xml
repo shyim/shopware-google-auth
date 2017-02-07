@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/menu.xsd">
+    <entries>
+        <entry>
+            <name>TwoFactorAuth</name>
+            <label lang="en">Two-factor authentication</label>
+            <label lang="de">Zwei-Faktor-Authentifizierung</label>
+            <controller>Twofactorauth</controller>
+            <action>index</action>
+            <parent identifiedBy="controller">ConfigurationMenu</parent>
+        </entry>
+    </entries>
+</menu>
